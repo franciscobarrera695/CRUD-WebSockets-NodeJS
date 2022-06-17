@@ -4,6 +4,7 @@ export const loadNotes = (callback) => {
     socket.on('server:loadnotes',callback)
 }
 export const saveNote = (title,description) => {
+    if([title,description].includes("")) return alert('faltan datos')
     socket.emit('client:newnote',{title,description})
 }
 
