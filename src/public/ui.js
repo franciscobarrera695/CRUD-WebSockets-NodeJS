@@ -9,15 +9,15 @@ let savedId = ''
 const noteUI = note => {
    const div = document.createElement('div')
    div.innerHTML = `
-   <div class='card card-body rounded mb-2 shadow animate__animated animate__fadeInUp'>
-       <div class='d-flex justify-content-between'>
-       <h1>${note.title}</h1>
+   <div class=' card card-body rounded mb-2 shadow animate__animated animate__fadeInUp'>
+       <div class='overflow-auto'>
+       <h1 class="card-title">${note.title}</h1>
+       <p class="card-text">${note.description}</p>
             <div>
             <button class="btn btn-danger delete" data-id="${note._id}">Delete</button>
             <button class="btn btn-secondary update" data-id="${note._id}">Edit</button>
              </div>
-       </div>
-       <p>${note.description}</p>
+             </div>
    </div>
    `
 
